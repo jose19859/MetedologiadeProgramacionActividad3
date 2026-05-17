@@ -13,13 +13,11 @@ namespace ejercicio
 	/// <summary>
 	/// Description of FabricaNumeros.
 	/// </summary>
-	/// 
-				// FACTORY METHOD
-	public abstract class  FabricaNumeros :FabricadeComparables
+	public class FabricaNumeros :FabricasdeComparables
 	{
 		public override IComparable CrearAleatorio(int opcion)
 		{
-			int valor = GeneradorDatosAleatorios.NumerosAleatorios(100);
+			int valor = GeneradorDatosAleatorios.NumerosAleatorio(100);
 				return new Numero(valor);
 		}
 		

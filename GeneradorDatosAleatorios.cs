@@ -13,7 +13,7 @@ namespace ejercicio
 	/// <summary>
 	/// Description of GeneradorDatosAleatorios.
 	/// </summary>
-	public static class GeneradorDatosAleatorios
+	public class GeneradorDatosAleatorios
 		
 	{
 		private static Random random = new Random();
@@ -23,7 +23,7 @@ namespace ejercicio
 			return random.Next(0, max +1);
 			
 		}
-		public  static string StringAleatorio(int cant)
+		public  static int stringAleatorio(int cant)
 		{
 			const string caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 			string resultado="";

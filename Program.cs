@@ -1,67 +1,52 @@
-﻿using System;
+﻿/*
+ * Creado por SharpDevelop.
+ * Usuario: jose
+ * Fecha: 15/4/2026
+ * Hora: 17:35
+ * 
+ * Para cambiar esta plantilla use Herramientas | Opciones | Codificación | Editar Encabezados Estándar
+ */
+using System;
 
 namespace ejercicio
 {
-    class Program
-    {
-        public static void Main(string[] args)
-        {
-            Profesor profe = new Profesor("jose", 123456, 4);
-            Pila p = new Pila();
-            
-            // Usamos una sola fábrica para el llenado
-            FabricadeComparables fabrica = new FabricaAlumnos();
-            Llenar(p, fabrica, 2);
-
-            //  Registro de alumnos como observadores,usamos el iterador de la Pila
-            Iterador ite = p.crearIterador();
-            ite.primero();
-            while (!ite.fin())
-            {
-                // Se asegura de que el elemento sea un observador antes de agregarlo
-                IObservador obs = ite.actual() as IObservador;
-                if (obs != null)
-                {
-                    profe.agregarObservador(obs);
-                }
-                ite.siguiente();
-            }
-
-            // Dictado de clases (Ejercicio 13 y 14)
-            dictadoDeClases(profe);
-
-            // Colección adicional e informe
-            IColeccionable miColeccion = new Pila();
-            FabricadeComparables miFabrica = new FabricaAlumnos();
-            Llenar(miColeccion, miFabrica, 1);
-            Informar(miColeccion);
-
-            Console.WriteLine("Presione cualquier tecla para salir...");
-            Console.ReadKey(true);
-        }
-
-        public static void dictadoDeClases(Profesor p)
-        {
-            for (int i = 0; i < 5; i++)
-            {
-                p.HablarAlaClase();
-                p.EscribirEnElPizarron();
-            }
-        }
-
-        public static void Llenar(IColeccionable coleccion, FabricadeComparables fabrica, int opcion)
-        {
-            for (int i = 0; i < 20; i++)
-            {
-                coleccion.Agregar(fabrica.CrearAleatorio(opcion));
-            }
-        }
-
-        public static void Informar(IColeccionable coleccion)
-        {
-            Console.WriteLine("Cantidad: " + coleccion.Cuantos());
-            Console.WriteLine("Maximo: " + coleccion.Maximo());
-            Console.WriteLine("Minimo: " + coleccion.Minimo());
-        }
-    }
-}
+	class Program
+	{
+		public static void Main(string[] args)
+		{
+		Profesor profe = new Profesor("jose", 123456,4);
+		Pila p = new Pila();
+		Llenar(p, 2);
+		Iterador ite=p.crearIterador();
+		ite.primero();
+		
+		while (!ite.fin())
+		{
+			profe.agregarObservador((IObservador)ite.actual());
+			ite.Siguiente();
+		}
+		
+			Console.Write("Press any key to continue . . . ");
+			Console.ReadKey(true);
+		}
+		
+		public static void Llenar(IComparable coparables, int opcion)
+		{
+			FabricaDeComparables fabrica;
+			
+			if (opcion == 1)
+				fabrica = new FabricaNumeros();
+			else
+				fabrica = new FabricaAlumnos();
+			
+			
+			for (int i=0; i<20;i++)
+			{
+				Comparable Comparable = fabrica.CrearAleatorio(opcion);
+				coleccionable.Agregar(comparable);
+			}
+		}
+		
+		
+	}
+}// me quede en el ejercicio de observador... hay que verificar errores

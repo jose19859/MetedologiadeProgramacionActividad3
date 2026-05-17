@@ -13,13 +13,12 @@ namespace ejercicio
 	/// <summary>
 	/// Description of FabricaAlumnos.
 	/// </summary>
-	///                 // FACTORY METHOD
-	public class FabricaAlumnos : FabricadeComparables
+	public class FabricaAlumnos : FabricasdeComparables
 	{
 		public override IComparable CrearAleatorio(int opcion)
 		{
 			string nombre = GeneradorDatosAleatorios.StringAleatorio(5);
-			int dni = GeneradorDatosAleatorios.NumerosAleatorios(9999999);
+			int dni = GeneradorDatosAleatorios.NumerosAleatorio(9999999);
 			return new Alumno(nombre,dni);
 		}
 		
@@ -29,7 +28,7 @@ namespace ejercicio
 			string nombre = LectorDeDatos.StringPorTeclado();
 			
 			Console.WriteLine("ingrese DNI");
-			int dni = LectorDeDatos.NumeroPorTeclado();
+			int dni = LectorDeDatos.StringPorTeclado();
 			
 			return new Alumno(nombre,dni);
 		}

@@ -13,13 +13,13 @@ namespace ejercicio
 	/// <summary>
 	/// Description of FabricaDeProfesores.
 	/// </summary>
-	public class FabricaDeProfesores : FabricadeComparables
+	public class FabricaDeProfesores : FabricasdeComparables
 	{
 		public override IComparable CrearAleatorio(int opcion)
 		{
 			string nombre=GeneradorDatosAleatorios.StringAleatorio(6);
-			int dni = GeneradorDatosAleatorios.NumerosAleatorios(9999999);
-			int antiguedad = GeneradorDatosAleatorios.NumerosAleatorios(30);
+			int dni = GeneradorDatosAleatorios.NumerosAleatorio(9999999);
+			int antiguedad = GeneradorDatosAleatorios.NumerosAleatorio(30);
 			
 			return	new Profesor(nombre , dni, antiguedad);
 		}
@@ -27,14 +27,14 @@ namespace ejercicio
 		public override IComparable CrearPorTeclado(int opcion)
 			
 		{
-			Console.WriteLine("Ingese nombre del Profesor");
+			Cosole.WriteLine("Ingese nombre del Profesor");
 			string nombre = LectorDeDatos.StringPorTeclado();
 			
-			Console.WriteLine("Ingese nombre del Profesor");
-			int dni = LectorDeDatos.NumeroPorTeclado();
+			Cosole.WriteLine("Ingese nombre del Profesor");
+			int dni = LectorDeDatos.StringPorTeclado();
 			
-			Console.WriteLine("Ingese nombre del Profesor");
-			int antiguedad = LectorDeDatos.NumeroPorTeclado();
+			Cosole.WriteLine("Ingese nombre del Profesor");
+			int antiguedad = LectorDeDatos.StringPorTeclado();
 			
 			return new Profesor(nombre,dni,antiguedad);
 			

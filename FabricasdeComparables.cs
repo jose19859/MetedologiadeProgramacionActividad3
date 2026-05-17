@@ -13,10 +13,9 @@ namespace ejercicio
 	/// <summary>
 	/// Description of FabricasdeComparables.
 	/// </summary>
-	public abstract class FabricadeComparables
+	public abstract class FabricasdeComparables
 	{
 		public abstract IComparable CrearAleatorio(int opcion);
-		
 		public abstract IComparable CrearPorTeclado(int opcion);
 		
 		

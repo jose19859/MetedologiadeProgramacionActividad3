@@ -13,7 +13,7 @@ namespace ejercicio
 	/// <summary>
 	/// Description of LectorDeDatos.
 	/// </summary>
-	public static class LectorDeDatos
+	public class LectorDeDatos
 	{
 		
 		public static int NumeroPorTeclado()
@@ -22,7 +22,7 @@ namespace ejercicio
 			string entrada = Console.ReadLine();
 			return int.Parse(entrada);
 		}
-		public static string StringPorTeclado()
+		public string StringPorTeclado()
 		{
 			Console.WriteLine("ingrese un string por teclado");
 			return Console.ReadLine();

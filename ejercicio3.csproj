@@ -46,17 +46,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Alumno.cs" />
-    <Compile Include="IColeccionable.cs" />
-    <Compile Include="Iterador.cs" />
-    <Compile Include="IteradorParaPila.cs" />
-    <Compile Include="Pila.cs" />
     <Compile Include="FabricaAlumnos.cs" />
     <Compile Include="FabricaDeProfesores.cs" />
     <Compile Include="FabricaNumeros.cs" />
     <Compile Include="FabricasdeComparables.cs" />
     <Compile Include="GeneradorDatosAleatorios.cs" />
     <Compile Include="IComparable.cs" />
-    <Compile Include="IObservador.cs" />
     <Compile Include="LectorDeDatos.cs" />
     <Compile Include="Numero.cs" />
     <Compile Include="Persona.cs" />

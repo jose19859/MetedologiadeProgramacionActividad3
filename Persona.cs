@@ -11,7 +11,7 @@ using System;
 namespace ejercicio
 {
 	
-	public class Persona:IComparable 
+	public class Persona:IComparable //se implementa la interface Comparable
 	{
 		public string Nombre;
 		 public int  Dni;
@@ -33,19 +33,19 @@ namespace ejercicio
 		
 
 		
-		public virtual bool SosMayorQue(IComparable c)
+			public bool SosMayorQue(IComparable c)
 			{ 
-				return this.Dni>((Persona)c).getDni();
+				return this.Dni>((persona)c).getDni();
 			}
 			
-		public virtual bool SosMenorQue(IComparable c)
+			public bool SosMenorQue(IComparable c)
 			{ 
-				return this.Dni<((Persona)c).getDni();
+				return this.Dni<((persona)c).getDni();
 			}
 			
-		public virtual bool SosIgualQue(IComparable c)
+			public bool SosIgualQue(IComparable c)
 			{ 
-				return this.Dni==((Persona)c).getDni();
+				return this.Dni==((persona)c).getDni();
 			}
 		}
 	}
